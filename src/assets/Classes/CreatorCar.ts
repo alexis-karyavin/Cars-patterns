@@ -1,14 +1,13 @@
 import {Car, CarBMW, CarMercedes} from "./Car";
 
-abstract class CreatorCar extends Car{
+abstract class Creator extends Car{
   protected constructor() {
     super();
   }
-
   public create(): any {};
 }
 
-export class CreatorBMW extends CreatorCar{
+export class CreatorBMW extends Creator{
   constructor() {
     super();
   }
@@ -20,7 +19,7 @@ export class CreatorBMW extends CreatorCar{
   }
 }
 
-export class CreatorMercedes extends CreatorCar{
+export class CreatorMercedes extends Creator{
   constructor() {
     super();
   }

@@ -1,6 +1,7 @@
 import {ParkCars} from "./assets/Classes/ParkCars";
 import {CreatorBMW, CreatorMercedes} from "./assets/Classes/CreatorCar";
 import {Autopilot, Parktronic} from "./assets/Classes/DecoratorCar";
+import {Body, Build, Engine, Tools} from "./assets/Classes/Composite";
 
 document.body.innerHTML = `
   <div class="container">
@@ -26,6 +27,12 @@ park.addCar(new Autopilot(car1));
 park.addCar(new Parktronic(car2));
 
 console.log("После модернизации:");
-
-console.log(park)
 park.getInfoCars();
+
+//Делаем сборки запчастей для бмв
+let build = new Build();
+build.add(new Engine());
+build.add(new Body());
+build.add(new Tools());
+
+console.log("Стоимость сбоки запчестей: " + build.getCost());
