@@ -16,7 +16,16 @@ export class ParkCars {
     })
   }
 
-  public getCar(model: string) {
-    
+  public getCar(model: string): Car {
+    const id = this.park.findIndex(car => {
+      return car.getModel() === model;
+    });
+    let car = this.park[id];
+    this.driveOut(id);
+    return car;
+  }
+
+  private driveOut(id: number): void {
+    this.park.splice(id, 1);
   }
 }

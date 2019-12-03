@@ -13,6 +13,10 @@ export abstract class Car {
         return this.name + " " + this.model;
     }
 
+    public getModel() {
+        return this.model;
+    }
+
     public getCost(): number {
         return this.cost;
     }

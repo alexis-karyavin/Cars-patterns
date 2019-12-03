@@ -6,6 +6,9 @@ abstract class DecoratorCar extends Car{
     super();
     this.car = car;
   }
+  getInfo(): string {
+    return this.getName() + " " + this.getCost();
+  }
 }
 
 export class Autopilot extends DecoratorCar {
@@ -14,11 +17,11 @@ export class Autopilot extends DecoratorCar {
   }
 
   getCost(): number {
-    return super.getCost() + 1000000;
+    return this.car.getCost() + 1000000;
   }
 
   getName(): string {
-    return super.getName() + "с автопилотом";
+    return this.car.getName() + " с автопилотом";
   }
 }
 
@@ -28,10 +31,10 @@ export class Parktronic extends DecoratorCar{
   }
 
   getCost(): number {
-    return super.getCost() + 300000;
+    return this.car.getCost() + 300000;
   }
 
   getName(): string {
-    return super.getName() + "с парктроником";
+    return this.car.getName() + " с парктроником";
   }
 }
