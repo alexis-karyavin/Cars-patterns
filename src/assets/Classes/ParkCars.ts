@@ -16,6 +16,15 @@ export class ParkCars {
     })
   }
 
+  public clone(): ParkCars {
+    let copy = new ParkCars();
+    this.park.forEach(car => {
+      copy.addCar(car);
+    });
+
+    return copy;
+  }
+
   public getCar(model: string): Car {
     const id = this.park.findIndex(car => {
       return car.getModel() === model;
