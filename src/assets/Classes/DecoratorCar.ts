@@ -9,6 +9,10 @@ abstract class DecoratorCar extends Car{
   getInfo(): string {
     return this.getName() + " " + this.getCost();
   }
+
+  public copy(): Car {
+    return this.car.copy();
+  }
 }
 
 export class Autopilot extends DecoratorCar {

@@ -19,7 +19,7 @@ export class ParkCars {
   public clone(): ParkCars {
     let copy = new ParkCars();
     this.park.forEach(car => {
-      copy.addCar(car);
+      copy.addCar(car.copy());
     });
 
     return copy;

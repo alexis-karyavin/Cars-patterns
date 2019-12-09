@@ -24,17 +24,28 @@ export abstract class Car {
     public getInfo() {
         return this.getName() + " " + this.cost;
     }
+
+    public abstract copy(): Car;
 }
 
 export class CarBMW extends Car{
     constructor(model: string, cost: number) {
         super("BMW", model, cost);
     }
+
+    public copy(): Car {
+        let copy = new CarBMW(this.model, this.cost);
+        return copy;
+    }
 }
 
 export class CarMercedes extends Car{
     constructor(model: string, cost: number) {
         super("Mercedes", model, cost);
+    }
+    public copy(): Car {
+        let copy = new CarMercedes(this.model, this.cost);
+        return copy;
     }
 }
 

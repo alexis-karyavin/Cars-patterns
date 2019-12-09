@@ -4,10 +4,7 @@ import {Autopilot, Parktronic} from "./assets/Classes/DecoratorCar";
 import {Body, Build, Engine, Tools} from "./assets/Classes/Composite";
 import {Caretaker, Originator} from "./assets/Classes/Memento";
 
-document.body.innerHTML = `
-  <div class="container">
-    Cars
-  </div>`;
+document.body.innerHTML = `<div class="container">Cars</div>`;
 
 let park = new ParkCars();
 const caretaker = new Caretaker();
